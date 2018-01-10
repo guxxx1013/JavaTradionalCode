@@ -1,0 +1,90 @@
+起手式：
+class Solution {
+    public static int magicalString(int n) {
+
+    }
+
+    public List<Integer> listReview(int n) {
+
+    }
+
+    public static void main(String[] args) {
+      Solution test = new Solution();
+      test.listReview(4);
+      magicalString(4);
+    }
+
+}
+
+自定义Class / Comparator():
+class Solution {
+    public class Interval {
+      int start;
+      int end;
+      Interval() {
+        start = 0;
+        end = 0;
+      }
+      Interval(int s, int e) {
+        start = s;//this.start = start
+        end = e;
+      }
+    }
+
+    public static class MyComparator implements Comparator<Interval> {
+      @Override
+      public int compare(Interval o1, Interval o2) {
+        if(o1.start != o2.start) {
+          return o1.start - o2.start;
+        } else {
+          return o1.end - o2.end;
+        }
+      }
+    }
+
+    public static void main(String[] args) {
+      //
+      Collections.sort(intervals, new MyComparator());
+      //
+      MyComparator comparator = new MyComparator();
+      Collections.sort(intervals, comparator);
+    }
+}
+
+iterator:(delete in List) :
+
+class Solution {
+
+    public static void main(String[] args) {
+      List<String> staff = new LinkedList<>();
+      ListIterator<String> lkI = staff.listIterator();
+      while (lkI.hasNext()) {
+        System.out.println(lkI.next());
+      }
+
+      List<String> lk = new LinkedList<>();
+      Iterator it = lk.iterator();
+      while (it.hasNext()) {
+        System.out.println(it.next());
+      }
+
+      List<String> famous = new ArrayList<String>();
+      for(Iterator<String> it = famous.iterator();it.hasNext();){
+         String s = it.next();
+         if(s.equals("madehua")){
+             it.remove();
+         }
+     }
+    }
+
+}
+
+Tree:
+public class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode (int x) {
+    val = x;
+  }
+}
